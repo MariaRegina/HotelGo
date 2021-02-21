@@ -1,4 +1,4 @@
-package com.mrsdeus.hotelgo.hotelApi.database;
+package com.mrsdeus.hotelgo.hotelApi.repositories;
 
 import com.mrsdeus.hotelgo.hotelApi.entities.Person;
 import org.springframework.data.jpa.repository.JpaRepository;

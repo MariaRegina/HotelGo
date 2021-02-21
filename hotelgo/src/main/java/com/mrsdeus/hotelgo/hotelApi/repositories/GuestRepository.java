@@ -1,4 +1,4 @@
-package com.mrsdeus.hotelgo.hotelApi.database;
+package com.mrsdeus.hotelgo.hotelApi.repositories;
 
 import com.mrsdeus.hotelgo.hotelApi.entities.Guest;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -8,4 +8,5 @@ import java.util.UUID;
 
 @Repository
 public interface GuestRepository extends JpaRepository <Guest, UUID> {
+    Guest findByPersonName(String nome);
 }

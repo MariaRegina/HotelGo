@@ -1,5 +1,7 @@
 package com.mrsdeus.hotelgo.hotelApi.entities;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,6 +20,8 @@ public class Person {
 
     private String name;
 
+   // @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy", locale = "pt-BR", timezone = "Brazil/East")
+    //@Column(name="date_birth")
     private Date dateBirth;
 
     public UUID getId() {
