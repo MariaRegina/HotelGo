@@ -1,11 +1,11 @@
 package com.mrsdeus.hotelgo.hotelApi.database;
 
-import com.mrsdeus.hotelgo.hotelApi.entities.Person;
+import com.mrsdeus.hotelgo.hotelApi.entities.Room;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.UUID;
 
 @Repository
-public interface PersonRepository extends JpaRepository<Person, UUID> {
+public interface RoomRepository extends JpaRepository <Room, UUID> {
 }
