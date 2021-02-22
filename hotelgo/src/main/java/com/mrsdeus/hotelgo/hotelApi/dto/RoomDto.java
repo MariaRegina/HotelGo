@@ -13,10 +13,6 @@ public class RoomDto {
         this.numero = room.getNumero();
     }
 
-    public RoomDto(Integer numero) {
-        this.numero = numero;
-    }
-
     public Integer getNumero() {
         return numero;
     }
@@ -25,7 +21,7 @@ public class RoomDto {
         this.numero = numero;
     }
 
-    public RoomDto entityToDto(Room room){
+    public static RoomDto entityToDto(Room room){
         if(room == null) return null;
         ModelMapper modelMapper = new ModelMapper();
         return modelMapper.map(room, RoomDto.class);

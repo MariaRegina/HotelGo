@@ -1,5 +1,6 @@
 package com.mrsdeus.hotelgo.hotelApi.controller;
 
+import com.mrsdeus.hotelgo.hotelApi.dto.GuestDto;
 import com.mrsdeus.hotelgo.hotelApi.entities.Guest;
 import com.mrsdeus.hotelgo.hotelApi.service.IGuestService;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.UUID;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
@@ -25,19 +25,20 @@ public class GuestController {
     }
 
     @GetMapping("/listGuest")
-    public List<Guest> findAllGuest(){
+    public List<GuestDto> findAllGuest(){
         return StreamSupport.stream(service.findAll().spliterator(), false)
+                .map(GuestDto::new)
                 .collect(Collectors.toList());
     }
 
     @GetMapping("/{id}")
-    public Optional<Guest> findGuest(@PathVariable("id")UUID id){
-        return service.findById(id);
+    public GuestDto findGuest(@PathVariable("id")UUID id){
+        return GuestDto.entityToDto(service.findById(id).orElse(null));
     }
 
     @GetMapping("/findByName/{name}")
-    public Guest findByName(@PathVariable("name")String name){
-        return service.findByPersonName(name);
+    public GuestDto findByName(@PathVariable("name")String name){
+        return GuestDto.entityToDto(service.findByPersonName(name));
     }
 
     @PostMapping("/add")

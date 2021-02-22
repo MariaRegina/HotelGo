@@ -27,7 +27,7 @@ public class RoomController {
 
     @GetMapping("/{id}")
     public RoomDto findById(@PathVariable("id")UUID id){
-        return new RoomDto().entityToDto(service.findById(id).orElse(null));
+        return RoomDto.entityToDto(service.findById(id).orElse(null));
     }
 
     @PostMapping("/add")

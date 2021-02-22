@@ -1,6 +1,5 @@
 package com.mrsdeus.hotelgo.hotelApi.service;
 
-import com.mrsdeus.hotelgo.hotelApi.dto.GuestDto;
 import com.mrsdeus.hotelgo.hotelApi.entities.Guest;
 
 import java.util.List;
